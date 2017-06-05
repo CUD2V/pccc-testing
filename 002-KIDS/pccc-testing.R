@@ -2,7 +2,7 @@
 #
 # 1. open cmd.exe
 # 2. navigate to directory with this file
-# 3. "C:\Programs Files\R\R-3.3.3\bin\R.exe" CMD BATCH --vanilla pccc-testing.R
+# 3. "C:\Program Files\R\R-3.3.3\bin\R.exe" CMD BATCH --vanilla pccc-testing.R
 # 4. Review the pccc-testing.Rout file.
 
 
