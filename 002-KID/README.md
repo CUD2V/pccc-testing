@@ -1,6 +1,6 @@
-# KID CCC
+# Testing and benchmarking the `pccc` package processing the 2009 KID
 
-Trying to recreate columns from Table 2 from Feudtner et al (2014)
+The table below shows the CCC v2 results from Table 2 from Feudtner et al (BMC Pediatrics 2014)
 
 |CCC Categories|KID (Weighted N = 7,337,017)|
 |:-------------|:--------------------------:|

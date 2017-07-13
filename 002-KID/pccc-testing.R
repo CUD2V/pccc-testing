@@ -2,20 +2,22 @@
 #
 # 1. open cmd.exe
 # 2. navigate to directory with this file
-# 3. "C:\Program Files\R\R-3.3.3\bin\R.exe" CMD BATCH --vanilla pccc-testing.R
+# 3. "C:\Program Files\R\R-3.3.3\bin\R.exe" CMD BATCH --vanilla pccc-testing.R  ### change R version if needed
 # 4. Review the pccc-testing.Rout file.
 
 
-# pccc test using the KID09 data
+# pccc test using the KID 2009 data
 date()
 
-library(readr, lib.loc = "C:/R-site-library/")
-library(dplyr, lib.loc = "C:/R-site-library/")
-library(tidyr, lib.loc = "C:/R-site-library/")
-library(pccc,  lib.loc = "C:/R-site-library/")
+library(readr)
+library(dplyr)
+library(tidyr)
+library(pccc)
 
-# read in the KID09 Data
+# read in the KID 2009 Data
+# NOTE: This is the location of the KID on our testing machine. Change path to KID location on your system.
 kid9cols <- read_csv("C:/HCUPData/KID/KID09_core_columns.csv")
+
 # Load ASCII Core file
 kid9core <- read_fwf("C:/HCUPData/KID/KID_2009_Core.ASC",
                      fwf_positions(
