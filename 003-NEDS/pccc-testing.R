@@ -22,13 +22,14 @@ ned <-
                 year = X91)
   
 # ICD Codes in X23 through X37, X53 through X57
-
+system.time({
 ccc_classifications <-
   ccc(ned, 
       subject_id,
       dx_cols = dplyr::vars(dplyr::num_range("X", c(23:37, 53:57))),
       pc_cols = dplyr::vars(dplyr::num_range("X", c(23:37, 53:57))),
       icdv = 9)
+})
 
 # saveRDS(ccc_classifications, file = paste0("ned_", START, "_", END, ".rds"))
 
