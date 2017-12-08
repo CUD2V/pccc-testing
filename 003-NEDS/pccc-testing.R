@@ -2,12 +2,13 @@ args  <- commandArgs(TRUE)
 START <- as.integer(args[1])
 END   <- as.integer(args[2])
 
-library(readr, lib.loc = "C:/R-site-library/")
-library(dplyr, lib.loc = "C:/R-site-library/")
-library(tidyr, lib.loc = "C:/R-site-library/")
-library(pccc,  lib.loc = "C:/R-site-library/")
+library(readr)
+library(dplyr)
+library(tidyr)
+library(pccc)
 
 # There are 28,584,301 lines in the file
+# NOTE: This is the location of the NEDS on our testing machine. Change path to NEDS location on your system.
 ned <-
   read_csv(file = "C:/HCUPData/NED_unencrypted/NEDS_2010_Core.csv",
            col_names = FALSE,
@@ -21,13 +22,14 @@ ned <-
                 year = X91)
   
 # ICD Codes in X23 through X37, X53 through X57
-
+system.time({
 ccc_classifications <-
   ccc(ned, 
       subject_id,
       dx_cols = dplyr::vars(dplyr::num_range("X", c(23:37, 53:57))),
       pc_cols = dplyr::vars(dplyr::num_range("X", c(23:37, 53:57))),
       icdv = 9)
+})
 
 # saveRDS(ccc_classifications, file = paste0("ned_", START, "_", END, ".rds"))
 
